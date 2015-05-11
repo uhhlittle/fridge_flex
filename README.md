@@ -10,12 +10,19 @@ BRONZE (MVP)
 	Basic Rails app with full crud functionality, and some javascript, that uses data from an api (AJAX request)
 
 User can create login, edit profile to include name, location, etc
+
 User can add ingredients to fridge.
+
 User can remove ingredients from the fridge
+
 User can see current list of ingredients in fridge 
+
 User can select ingredients from the fridge and return an api search
+
 User can favorite recipes from api return.
+
 User can view profile page to see favorite recipes and current grocery list
+
 User can remove favorites from their profile page 
 
 SILVER 
