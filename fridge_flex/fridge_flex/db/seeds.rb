@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Profile.destroy_all
+
+Profile.create ([
+  {first_name: "Bob", last_name: "Dole", location: "Washington", user_id: 1, dob: 1980-03-02}
+   ]);

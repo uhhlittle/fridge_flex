@@ -1,5 +1,22 @@
 Rails.application.routes.draw do
+
+  # post 'user_session', to: 'fridges'
+
+  # post 'user_registration', to: 'profiles#new'
+
+  get '/get_search_result', to: "search#get_search_result"
+
   devise_for :users
+
+  root "homes#index"
+
+  resources :profiles
+
+  resources :fridges
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

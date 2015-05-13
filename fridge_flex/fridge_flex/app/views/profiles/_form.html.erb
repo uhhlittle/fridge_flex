@@ -1,0 +1,15 @@
+<%= form_for @profile do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name%>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :dob %>
+  <%= f.text_field :dob%>
+
+  <%= f.submit %>
+<% end %>
