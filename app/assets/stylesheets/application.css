@@ -13,7 +13,14 @@
  *= require_tree .
  *= require_self
  */
-.right {
+.right li {
   display: inline-block;
   line-height: 15px;
+  float: right;
+}
+
+.left li {
+  display: inline-block;
+  line-heigh-: 15px;
+  float: left;
 }

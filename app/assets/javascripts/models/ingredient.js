@@ -1,7 +1,7 @@
-var Ingredient = function(id, description, completed){
+var Ingredient = function(id, name, oz){
   this.id = id;
-  this.description = description;
-  this.completed = completed;
+  this.name = name;
+  this.oz = oz;
 }
 
 Ingredient.prototype = {
@@ -13,7 +13,7 @@ Ingredient.prototype = {
       url: "/ingredients"
     }).done(function(response){
       console.log("model saved")
-      trilloModel.fetchIngredients();
+      fridgeModel.fetchIngredients();
     }).fail(function(){
       console.log("failed to save")
     })
@@ -25,7 +25,7 @@ Ingredient.prototype = {
       dataType: 'json',
       url: "/ingredients/" + this.id
     }).done(function(response){
-      trilloModel.fetchIngredients();
+      fridgeModel.fetchIngredients();
       console.log("model updated")
     }).fail(function(){
       console.log("failed to updated")

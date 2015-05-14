@@ -1,9 +1,9 @@
 var IngredientView = function(ingredient){
   this.ingredient = ingredient;
   this.container = document.createElement("div");
-  this.container.className = "card";
+  this.container.className = "ingredient";
   this.name = document.createElement("label");
-  this.name.innerHTML = ingredient.name;s
+  this.name.innerHTML = ingredient.name;
   this.name.htmlFor = "ingredient" + ingredient.id;
   this.container.appendChild(this.name);
 

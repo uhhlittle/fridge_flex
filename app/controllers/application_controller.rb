@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
   # redirect user after login
 def after_sign_in_path_for(resource)
   if current_user.profile.nil?
-    new_profile_path
+    new_profile_path(current_user.profile)
   else
-    profile_path
+    profile_path(current_user.profile)
   end
 end
 

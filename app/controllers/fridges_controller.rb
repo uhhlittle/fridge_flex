@@ -1,15 +1,14 @@
 class FridgesController < ApplicationController
 def index
-  @fridges = Fridge.all
+  @fridges = current_user.profile.fridge
+  respond_to do |format|
+    format.html { render :index }
+    format.json { render json: @fridges}
+  end
 end
 
 def show
-  @fridge = Fridge.find(params[:id])
-
-  respond_to do |format|
-    format.html { render :index }
-    format.json { render json: @fridge }
-  end
+  @fridge = current_user.profile.fridge
 end
 
 def user_session

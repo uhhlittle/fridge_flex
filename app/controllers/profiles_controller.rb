@@ -5,21 +5,20 @@ end
 
 def new
   @profile = Profile.new
-
 end
 
 def create
   @profile = current_user.create_profile(profile_params)
   @fridge = @profile.create_fridge
-  redirect_to @profile
+  redirect_to profile_path(@profile)
 end
 
 def edit
-  @profile = Profile.find(params[:id])
+  @profile = current_user.profile
 end
 
 def update
-  @profile = Profile.find(params[:id])
+  @profile = current_user.profile
   @profile.update(profile_params)
   redirect_to profile_path(@profile)
 end

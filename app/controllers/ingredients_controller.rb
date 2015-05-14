@@ -31,5 +31,8 @@ class IngredientsController < ApplicationController
     render nothing: true
   end
 
-
+private
+def ingredient_params
+  return params[:ingredient].permit(:name, :oz)
+end
 end
