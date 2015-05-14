@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+    fridgeModel = new Fridge();
+    fridgeView = new FridgeView(fridgeModel);
+  // fridgeModel = new Fridge();
+  // fridgeView = new FridgeView(fridgeModel);
+});

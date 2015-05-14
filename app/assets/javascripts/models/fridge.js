@@ -1,20 +1,27 @@
-var Fridge = function(id, profileId, empty) {
-  this.id = id;
-  this.profileId = profileId;
-  this.empty = empty;
+var Fridge = function(){
+  this.ingredients = []
+  this.fetchIngredients();
 }
 
 Fridge.prototype = {
-  save: function() {
-        $.ajax({
-        type: 'POST',
-        data: { fridge: {id: this.id, profile_id: this.profileId, empty: this.empty}},
-        dataType: 'json',
-        url: "/fridge(params[:id])"
-      }).done(function(response){
-      console.log("model saved");
-      }).fail(function(){
-      console.log("failed to save")
+  fetchIngredients: function(callback) {
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      url: "/ingredients"
+    }).done(function(response) {
+      fridgeModel.loadIngredients(response);
+      fridgeView.render();
+    }).fail(function(response){
+      console.log("js failed to load")
     })
+  },
+  loadIngredients: function(response) {
+    this.ingredients = [];
+    for(var i = 0; i < response.length; i++){
+      var ingredient = new Ingredient(response[i].id, response[i].name, response[i].oz);
+      this.ingredients.push(ingredient);
+    }
   }
+
 }
