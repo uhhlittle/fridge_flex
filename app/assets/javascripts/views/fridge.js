@@ -6,13 +6,12 @@ var FridgeView = function(fridgeModel){
   this.doneList = document.querySelector("#completed-column .ingredient-list");
   this.model = fridgeModel;
   newIngredientButton.addEventListener("click", this.addIngredient.bind(this));
-  console.log("the button was clicked");
+
   this.render();
 }
 
 FridgeView.prototype = {
   addIngredient: function(event){
-    console.log("there's some stuff blocking it")
     event.preventDefault();
     var id = this.id;
     var name = this.newIngredientName.value;

@@ -21,6 +21,9 @@
       <% end %>
     </ul>
     <ul class="left">
+      <div id="logo">
+        <h1>fridge.flex</h1>
+      </div>
       <% if current_user && current_user.profile %>
         <li><%= link_to 'Profile', profile_path(current_user.profile) %> </li>
         <li><%= link_to 'Fridge', fridge_path(current_user.profile.fridge) %> </li>

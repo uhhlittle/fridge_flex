@@ -21,7 +21,7 @@ Ingredient.prototype = {
   update: function(data){
     $.ajax({
       type: 'PUT',
-      data: {card: data},
+      data: {ingredient: data},
       dataType: 'json',
       url: "/ingredients/" + this.id
     }).done(function(response){
@@ -29,6 +29,19 @@ Ingredient.prototype = {
       console.log("model updated")
     }).fail(function(){
       console.log("failed to updated")
+    })
+  },
+  deleteIngredient: function(){
+    $.ajax({
+      type: 'DELETE',
+      data: {_method: 'delete'},
+      dataType: 'json',
+      url: "/ingredients/" + this.id
+    }).done(function(response){
+      fridgeModel.fetchIngredients();
+      console.log("model deleted")
+    }).fail(function(){
+      console.log("failed to delete")
     })
   }
 }

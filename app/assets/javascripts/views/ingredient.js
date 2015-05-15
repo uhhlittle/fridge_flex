@@ -7,19 +7,32 @@ var IngredientView = function(ingredient){
   this.name.innerHTML = ingredient.name;
   this.name.htmlFor = "ingredient" + ingredient.id;
   this.container.appendChild(this.name);
-
+  //edit function
   // var input = document.createElement("input")
-  // input.type = "text"
-  // input.checked = card.completed
+  // input.type = "checkbox"
+  // input.checked = ingredient.completed
   // input.className = "finish"
-  // input.id = "card" + card.id;
+  // input.id = "ingredient" + ingredient.id;
   // input.addEventListener("click", function(){
   //   var completed = input.checked ? true : false
-  //   card.update({completed: completed});
+  //   ingredient.update({completed: completed});
   // })
 
-  // this.name.addEventListener("click", this.editIngredient.bind(this))
-  // this.container.appendChild(input)
+  //delete button
+  var delete_button = document.createElement("button");
+  delete_button.id = "ingredient" + ingredient.id
+  var text = document.createTextNode("Delete");
+  text.className = "delete"
+  delete_button.addEventListener("click", function() {
+    ingredient.deleteIngredient();
+  });
+
+
+  this.name.addEventListener("click", this.editIngredient.bind(this))
+
+  this.container.appendChild(delete_button);
+  this.container.appendChild(text);
+  // this.container.appendChild(input); ----edit append needs work
   return this.container
 }
 
@@ -33,7 +46,7 @@ IngredientView.prototype = {
       if (event.keyCode == 13){
         var value = input.value;
         this.ingredient.update({name:value});
-        FridgeView.render();
+        fridgeView.render();
       }
     }.bind(this) )
   }
