@@ -66,7 +66,7 @@ body {
   background: #EDEEEE;
   color: rgba(255, 255, 255, 0.5);
 }
-h1, h2{
+h1, h2, p{
   color: #556272;
 }
 h1, p {
@@ -159,7 +159,7 @@ h1, p {
 
 .ingredient label:hover
 {
-  background-color:#fff;
+  background-color:#efaaaa;
 }
 
 .ingredient label:active
@@ -228,7 +228,7 @@ h1, p {
   background-color: #4ECDC4;
 }
 
-#draggable { width: 150px; height: 150px; padding: 0.5em; }
+/*#draggable { width: 150px; height: 150px; padding: 0.5em; }*/
 
 #logo {
   float: left;
