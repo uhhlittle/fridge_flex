@@ -2,6 +2,7 @@ var IngredientView = function(ingredient){
   this.ingredient = ingredient;
   this.container = document.createElement("div");
   this.container.className = "ingredient";
+  // create label for input used by in-place editing
   this.name = document.createElement("label");
   this.name.innerHTML = ingredient.name;
   this.name.htmlFor = "ingredient" + ingredient.id;
@@ -17,7 +18,7 @@ var IngredientView = function(ingredient){
   //   card.update({completed: completed});
   // })
 
-  this.name.addEventListener("click", this.editIngredient.bind(this))
+  // this.name.addEventListener("click", this.editIngredient.bind(this))
   // this.container.appendChild(input)
   return this.container
 }
@@ -30,9 +31,9 @@ IngredientView.prototype = {
     this.container.appendChild(input)
     input.addEventListener("keyup", function(event){
       if (event.keyCode == 13){
-        var value = input.value
-        this.ingredient.update({name:value})
-        FridgeView.render()
+        var value = input.value;
+        this.ingredient.update({name:value});
+        FridgeView.render();
       }
     }.bind(this) )
   }

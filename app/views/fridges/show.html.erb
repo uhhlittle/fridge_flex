@@ -16,3 +16,11 @@
   <ul class="ingredient-list">
   </ul>
 </div>
+
+<script>
+  $(document).ready(function(){
+      fridgeModel = new Fridge();
+      console.log("this is a fridge")
+      fridgeView = new FridgeView(fridgeModel);
+  });
+</script>

@@ -1,24 +1,25 @@
 var Fridge = function(){
   this.ingredients = []
   this.fetchIngredients()
-  $.ajax({
-    type: 'GET',
-    data: { fridge: {profile_id: this.profileID}},
-    dataType: 'json',
-    url: "/fridges"
-  }).done(function(response){
-    console.log("this is a fridge")
-    console.log(response);
-  }).fail(function(){
-    console.log("failed to save")
-  });
+  console.log("This fridge has been CREATED@!!!!")
+  // $.ajax({
+  //   type: 'GET',
+  //   data: { fridge: {profile_id: this.profileID}},
+  //   dataType: 'json',
+  //   url: "/fridges"
+  // }).done(function(response){
+  //
+  //   console.log(response);
+  // }).fail(function(){
+  //   console.log("failed to save")
+  // });
 }
 
 Fridge.prototype = {
   save: function(){
     $.ajax({
       type: 'POST',
-      data: { fridge: {profileID: this.profileID}},
+      data: { fridge},
       dataType: 'json',
       url: "/fridges"
     }).done(function(response){
@@ -34,8 +35,9 @@ Fridge.prototype = {
       url: "/ingredients",
       context: this
     }).done(function(response) {
+      // fridgeView = new FridgeView(this);
       fridgeModel.loadIngredients(response);
-      fridgeView = new FridgeView(this);
+
       fridgeView.render();
     }).fail(function(response){
       console.log("js failed to load")
