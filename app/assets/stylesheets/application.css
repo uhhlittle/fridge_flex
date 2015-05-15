@@ -36,14 +36,14 @@
 
 }
 .left{
-  
+
   display: inline-block;
 
 
 }
 .left li {
   display: inline-block;
-  line-heigh-: 15px;
+  line-height: 15px;
   float: left;
   padding: 5px;
 
