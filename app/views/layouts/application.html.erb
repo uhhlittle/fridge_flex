@@ -10,16 +10,20 @@
   <header>
     <ul class= "right">
       <% if current_user && current_user.profile %>
+      <li>  <%= link_to 'Signout', destroy_user_session_path, :method => :delete, class: "sign_out" %> </li>
         <li><em><%= link_to "Welcome #{current_user.email}", profile_path(current_user.profile)%></em></li>
-        <li>  <%= link_to 'Signout', destroy_user_session_path, :method => :delete, class: "sign_out" %> </li>
-        <li>  <%= link_to 'Profile', profile_path(current_user.profile) %> </li>
-
       <% elsif current_user %>
           <li><em><%= link_to "Welcome #{current_user.email}", '/profile'%></em></li>
           <li>  <%= link_to 'Signout', destroy_user_session_path, :method => :delete, class: "sign_out" %> </li>
       <% else %>
         <li>  <%= link_to "Sign up", new_user_registration_path, class: "sign_up" %> </li>
         <li>  <%= link_to "Login", new_user_session_path, class: "login" %> </li>
+      <% end %>
+    </ul>
+    <ul class="left">
+      <% if current_user && current_user.profile %>
+        <li><%= link_to 'Profile', profile_path(current_user.profile) %> </li>
+        <li><%= link_to 'Fridge', fridge_path(current_user.profile.fridge) %> </li>
       <% end %>
     </ul>
   </header>

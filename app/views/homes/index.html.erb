@@ -1,1 +1,10 @@
-<p>THIS IS YOUR HOME PAGE.</p>
+<div class= "profile_view">
+  <h1><p>Welcome to <strong>fridge.flex</p></h1>
+    <h2>Make more out of what's left</h2>
+      <div id="view_buttons">
+        <%= link_to "Sign up", new_user_registration_path, class: "sign_up" %>
+      </div>
+      <div id="view_buttons">
+        <%= link_to "Log in", new_user_session_path, class: "sign_in" %>
+      </div>
+</div>
