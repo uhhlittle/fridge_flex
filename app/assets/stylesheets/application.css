@@ -73,6 +73,10 @@ h1, p {
   margin-left: 24px;
 }
 
+p {
+  color: #556272;
+}
+
 #new-ingredient-name {
   margin: 0 0 0 24px;
   padding: 12px;
@@ -238,4 +242,8 @@ h1, p {
   padding 5px;
   border-radius: 10px;
 
+}
+
+form {
+  color: #556272;
 }
