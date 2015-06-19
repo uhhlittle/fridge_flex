@@ -1,9 +1,11 @@
 <h1> Welcome <%=@profile.first_name %> </h1>
 <div class= "profile_view" >
-  <div id= "view_buttons">
-    <%= link_to "Edit Profile Info", edit_profile_path %>
-  </div>
-  <div id= "view_buttons">
-    <%= link_to "View Your Fridge", fridge_path(@profile.fridge) %>
+  <div class ="button-display">
+    <div id= "view_buttons">
+      <%= link_to "Edit Profile Info", edit_profile_path %>
+    </div>
+    <div id= "view_buttons">
+      <%= link_to "View Your Fridge", fridge_path(@profile.fridge) %>
+    </div>
   </div>
 </div>

@@ -16,6 +16,10 @@
  /*body {
  background-color: #2eafdb;
  }*/
+ .right {
+   display: inline-block;
+   float: right;
+ }
 
 .right li {
   display: inline-block;
@@ -27,15 +31,15 @@
 
   border: none;
   border-radius: 10px;
-  border-bottom: 1px solid #198132;
-  border-right: 1px solid #198132;
+  border-bottom: 1px solid #556272;
+  border-right: 1px solid #556272;
 
   font-size: 16px;
   color: #fff;
-  background-color: #C8F463;
+  background-color: #b3ccba;
 
 }
-.left{
+.left {
 
   display: inline-block;
 
@@ -52,18 +56,23 @@
 
   border: none;
   border-radius: 10px;
-  border-bottom: 1px solid #198132;
-  border-right: 1px solid #198132;
+  border-bottom: 1px solid #556272;
+  border-right: 1px solid #556272;
 
   font-size: 16px;
   color: #fff;
-  background-color: #C8F463;
+  background-color: #b3ccba;
+
+}
+
+.left h1 {
+  color: #dceded;
 
 }
 
 body {
   font-family: 'Helvetica';
-  background: #EDEEEE;
+  background: #2eacb3;
   color: rgba(255, 255, 255, 0.5);
 }
 h1, h2, p{
@@ -113,12 +122,12 @@ p {
 
   border: none;
   border-radius: 10px;
-  border-bottom: 1px solid #198132;
-  border-right: 1px solid #198132;
+  border-bottom: 1px solid #556272;
+  border-right: 1px solid #556272;
 
   font-size: 16px;
   color: #fff;
-  background-color: #4ECDC4;
+  background-color: #ff6b6b;
 }
 
 .column {
@@ -126,18 +135,20 @@ p {
 
   float: left;
   width: 40%;
+  height: 400px;
   margin: 24px;
   padding: 24px;
 
+
   border-radius: 10px;
 
-  background-color: #FF6B6B;
+  background-color: #dceded;
   color: #444;
 }
 
 .column-heading {
   margin: 0px;
-  border-bottom: 1px solid #bbb;
+  /*border-bottom: 1px solid #bbb;*/
 }
 
 .ingredient-list {
@@ -173,6 +184,7 @@ p {
 
 .ingredient .delete {
   color: #f66;
+  margin-top: 20px;
   margin-left: 12px;
   float: right;
   cursor: pointer;
@@ -192,8 +204,8 @@ p {
   margin-left: auto;
   margin-right: auto;
   width: 60%;
-  height: 500px;
-  margin: 24px;
+  height: 300px;
+
   padding: 24px;
 
   border-radius: 10px;
@@ -203,46 +215,61 @@ p {
 }
 
 #view_buttons {
+  display: inline-block;
   width: 30%;
   margin: 0 0 0 24px;
   padding: 12px 24px;
+  float:right
 
   border: none;
   border-radius: 10px;
-  border-bottom: 1px solid #198132;
-  border-right: 1px solid #198132;
+  border-bottom: 1px solid #556272;
+  border-right: 1px solid #556272;
 
   font-size: 16px;
   color: #fff;
-  background-color: #C8F463;
+  background-color: #ff6b6b;
+}
+
+.button-display {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 80px;
+  padding-top: 50px;
 }
 
 #look-for-recipes {
   width: 30%;
   margin: 0 0 0 24px;
-  padding: 12px 24px;
+  padding: 12px 12px;
+
+  float: right;
 
   border: none;
   border-radius: 10px;
-  border-bottom: 1px solid #198132;
-  border-right: 1px solid #198132;
+  border-bottom: 1px solid #556272;
+  border-right: 1px solid #556272;
 
   font-size: 16px;
   color: #fff;
-  background-color: #4ECDC4;
+  background-color: #ff6b6b;
 }
 
 /*#draggable { width: 150px; height: 150px; padding: 0.5em; }*/
 
 #logo {
+
   float: left;
   display: inline-block;
-  border: 1px solid #198132;
+  border: 2px solid #dceded;
   text-align: center;
   padding 5px;
   border-radius: 10px;
 
 }
+
+
 
 form {
   color: #556272;

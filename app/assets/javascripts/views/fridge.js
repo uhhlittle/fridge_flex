@@ -16,10 +16,12 @@ FridgeView.prototype = {
     var id = this.id;
     var name = this.newIngredientName.value;
     var oz = this.newIngredientOz.value;
-    var ingredient = new Ingredient(null, name, oz);
+    var ingredient = new Ingredient(id, name, oz);
     ingredient.save();
     this.render()
   },
+  
+
   render: function(){
     this.currentIngredientList.innerHTML = "";
     console.log("current-ingredients");

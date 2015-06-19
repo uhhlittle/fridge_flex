@@ -33,6 +33,6 @@ class IngredientsController < ApplicationController
 
 private
 def ingredient_params
-  return params[:ingredient].permit(:name, :oz)
+  return params[:ingredient].permit(:id, :name, :oz)
 end
 end

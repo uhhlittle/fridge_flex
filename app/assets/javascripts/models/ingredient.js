@@ -8,7 +8,7 @@ Ingredient.prototype = {
   save: function(){
     $.ajax({
       type: 'POST',
-      data: { ingredient: {name: this.name, oz: this.oz}},
+      data: { ingredient: {id: this.id, name: this.name, oz: this.oz}},
       dataType: 'json',
       url: "/ingredients"
     }).done(function(response){
@@ -41,6 +41,7 @@ Ingredient.prototype = {
       fridgeModel.fetchIngredients();
       console.log("model deleted")
     }).fail(function(){
+      fridgeModel.fetchIngredients();
       console.log("failed to delete")
     })
   }

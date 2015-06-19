@@ -7,31 +7,29 @@ var IngredientView = function(ingredient){
   this.name.innerHTML = ingredient.name;
   this.name.htmlFor = "ingredient" + ingredient.id;
   this.container.appendChild(this.name);
-  //edit function
-  // var input = document.createElement("input")
-  // input.type = "checkbox"
-  // input.checked = ingredient.completed
-  // input.className = "finish"
-  // input.id = "ingredient" + ingredient.id;
-  // input.addEventListener("click", function(){
-  //   var completed = input.checked ? true : false
-  //   ingredient.update({completed: completed});
-  // })
 
   //delete button
-  var delete_button = document.createElement("button");
-  delete_button.id = "ingredient" + ingredient.id
-  var text = document.createTextNode("Delete");
-  text.className = "delete"
-  delete_button.addEventListener("click", function() {
-    ingredient.deleteIngredient();
-  });
+  // var delete_button = document.createElement("button");
+  // delete_button.id = "ingredient" + ingredient.id
+  // var text = document.createTextNode("Delete");
+  // text.className = "delete"
+  // delete_button.addEventListener("click", function() {
+  //   ingredient.deleteIngredient();
+  // });
 
+  var delete_button = document.createElement("button");
+    delete_button.id = "ingredient" + ingredient.id
+    delete_button.className = "delete"
+    $("#delete_button.id").attr('value', 'Delete');
+
+    delete_button.addEventListener("click", function() {
+      ingredient.deleteIngredient();
+    });
 
   this.name.addEventListener("click", this.editIngredient.bind(this))
 
   this.container.appendChild(delete_button);
-  this.container.appendChild(text);
+  // this.container.appendChild(text);
   // this.container.appendChild(input); ----edit append needs work
   return this.container
 }

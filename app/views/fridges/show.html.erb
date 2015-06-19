@@ -11,15 +11,16 @@
   </ul>
 </div>
 
-<div id="completed-column" class="column">
+<!-- <div id="completed-column" class="column">
   <h2 class="column-heading">On the Counter:</h2>
   <ul class="ingredient-list">
   </ul>
-  <!-- <button id="look-for-recipes">Find Recipes!</button> -->
-</div>
+
+</div> -->
 
 <div id="recipes-column" class="column">
   <h2 class="column-heading">Recipes</h2>
+  <button id="look-for-recipes">Find Recipes!</button>
   <div>
 
 <script>
@@ -27,7 +28,6 @@
       fridgeModel = new Fridge();
       console.log("this is a fridge")
       fridgeView = new FridgeView(fridgeModel);
-
 
 
   });

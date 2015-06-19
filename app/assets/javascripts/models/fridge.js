@@ -19,7 +19,7 @@ Fridge.prototype = {
   save: function(){
     $.ajax({
       type: 'POST',
-      data: { fridge},
+      data: {fridge: data},
       dataType: 'json',
       url: "/fridges"
     }).done(function(response){
