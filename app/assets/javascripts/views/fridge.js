@@ -1,12 +1,13 @@
 var FridgeView = function(fridgeModel){
   var newIngredientButton = document.querySelector("#new-ingredient-button");
+  var lookForRecipesButton = document.querySelector("#look-for-recipes");
   this.newIngredientName = document.querySelector("#new-ingredient-name");
   this.newIngredientOz = document.querySelector("#new-ingredient-oz");
   this.currentIngredientList = document.querySelector("#current-ingredient-column ul.ingredient-list");
-  this.doneList = document.querySelector("#completed-column .ingredient-list");
+  this.doneList = document.querySelector("#recipe-column .ingredient-list");
   this.model = fridgeModel;
   newIngredientButton.addEventListener("click", this.addIngredient.bind(this));
-
+  lookForRecipesButton.addEventListener("click", this.searchRecipes.bind(this));
   this.render();
 }
 
@@ -20,7 +21,32 @@ FridgeView.prototype = {
     ingredient.save();
     this.render()
   },
-  
+
+  searchRecipes:  function(callback) {
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      url: "/get_search_result",
+      context: this
+    }).done(function(response) {
+      // fridgeView = new FridgeView(this);
+      fridgeModel.loadRecipes(response);
+      fridgeView.render();
+
+    }).fail(function(response){
+      console.log("js failed to load")
+    })
+  },
+
+  loadRecipes: function(response) {
+    this.recipes = [];
+    for(var i = 0; i < response.length; i++){
+      var recipe = new Recipe(response[i].title, response[i].ingredients, response[i].image_url);
+      this.recipes.push(recipe);
+    }
+  },
+
+
 
   render: function(){
     this.currentIngredientList.innerHTML = "";
@@ -31,4 +57,4 @@ FridgeView.prototype = {
 
     }
   }
-}
+};
