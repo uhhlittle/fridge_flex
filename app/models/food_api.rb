@@ -1,4 +1,4 @@
-class F2F
+class FoodApi
   attr_reader :results
 
   def initialize(search_params)
@@ -21,7 +21,7 @@ class F2F
 
   def headers
     {
-      "X-Mashape-Key" => ENV['MASHAPE_KEY']
+      "X-Mashape-Key" => ENV['MASHAPE_KEY'],
       "Accept" => "application/json"
     }
   end

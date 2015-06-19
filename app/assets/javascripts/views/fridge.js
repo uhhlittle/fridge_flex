@@ -4,7 +4,7 @@ var FridgeView = function(fridgeModel){
   this.newIngredientName = document.querySelector("#new-ingredient-name");
   this.newIngredientOz = document.querySelector("#new-ingredient-oz");
   this.currentIngredientList = document.querySelector("#current-ingredient-column ul.ingredient-list");
-  this.doneList = document.querySelector("#recipe-column .ingredient-list");
+  this.recipeList = document.querySelector("#recipe-column");
   this.model = fridgeModel;
   newIngredientButton.addEventListener("click", this.addIngredient.bind(this));
   lookForRecipesButton.addEventListener("click", this.searchRecipes.bind(this));
@@ -45,6 +45,14 @@ FridgeView.prototype = {
       this.recipes.push(recipe);
     }
   },
+
+  // renderRecipes: function(response) {
+  //   this.recipeList.innerHTML = "";
+  //   console.log("current-ingredients");
+  //   for(var i = 0; i < this.model.recipes.length; i++){
+  //     var recipeView = new RecipeView(this.model.recipes[i])
+  //       this.recipeList.appendChild(recipeView);
+  // },
 
 
 

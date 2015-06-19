@@ -184,9 +184,9 @@ p {
 
 .ingredient .delete {
   color: #f66;
-  margin-top: 20px;
-  margin-left: 12px;
-  float: right;
+  display: inline-block;
+  margin-left: 20px;
+  /*float: right;*/
   cursor: pointer;
 }
 

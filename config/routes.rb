@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # post 'user_registration', to: 'profiles#new'
 
-  get '/get_search_result', to: "search#get_search_result"
+  get '/get_search_result', to: "searches#get_search_result"
 
   devise_for :users
 
