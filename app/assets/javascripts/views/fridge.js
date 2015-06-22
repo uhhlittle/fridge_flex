@@ -29,8 +29,9 @@ FridgeView.prototype = {
       url: "/get_search_result",
       context: this
     }).done(function(response) {
+        console.log("got search response");
       // fridgeView = new FridgeView(this);
-      fridgeModel.loadRecipes(response);
+      fridgeView.loadRecipes(response);
       fridgeView.render();
 
     }).fail(function(response){
@@ -39,11 +40,13 @@ FridgeView.prototype = {
   },
 
   loadRecipes: function(response) {
+    console.log("loading recipes");
     this.recipes = [];
     for(var i = 0; i < response.length; i++){
       var recipe = new Recipe(response[i].title, response[i].ingredients, response[i].image_url);
       this.recipes.push(recipe);
     }
+    console.log(this.recipes);
   },
 
   // renderRecipes: function(response) {
