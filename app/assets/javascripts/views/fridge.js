@@ -4,7 +4,7 @@ var FridgeView = function(fridgeModel){
   this.newIngredientName = document.querySelector("#new-ingredient-name");
   this.newIngredientOz = document.querySelector("#new-ingredient-oz");
   this.currentIngredientList = document.querySelector("#current-ingredient-column ul.ingredient-list");
-  this.recipeList = document.querySelector("#recipe-column");
+  this.recipeList = document.querySelector("#recipes-column ul.recipe-list");
   this.model = fridgeModel;
   newIngredientButton.addEventListener("click", this.addIngredient.bind(this));
   lookForRecipesButton.addEventListener("click", this.searchRecipes.bind(this));
@@ -32,7 +32,9 @@ FridgeView.prototype = {
         console.log("got search response");
       // fridgeView = new FridgeView(this);
       fridgeView.loadRecipes(response);
+
       fridgeView.render();
+      fridgeView.renderRecipes();
 
     }).fail(function(response){
       console.log("js failed to load")
@@ -47,17 +49,17 @@ FridgeView.prototype = {
       this.recipes.push(recipe);
     }
     console.log(this.recipes);
+
   },
 
-  // renderRecipes: function(response) {
-  //   this.recipeList.innerHTML = "";
-  //   console.log("current-ingredients");
-  //   for(var i = 0; i < this.model.recipes.length; i++){
-  //     var recipeView = new RecipeView(this.model.recipes[i])
-  //       this.recipeList.appendChild(recipeView);
-  // },
-
-
+  renderRecipes: function(){
+    this.recipeList.innerHTML = "";
+    console.log("current-recipes");
+    for(var i = 0; i < this.recipes.length; i++){
+    var recipeView = new RecipeView(this.recipes[i])
+      this.recipeList.appendChild(recipeView);
+    }
+  },
 
   render: function(){
     this.currentIngredientList.innerHTML = "";
@@ -67,5 +69,7 @@ FridgeView.prototype = {
         this.currentIngredientList.appendChild(ingredientView);
 
     }
-  }
+
+}
+
 };
