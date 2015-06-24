@@ -138,6 +138,8 @@ p {
   height: 400px;
   margin: 24px;
   padding: 24px;
+  overflow: auto;
+
 
 
   border-radius: 10px;
@@ -190,13 +192,25 @@ p {
   cursor: pointer;
 }
 
-.ingredient .finish {
+
+
+.recipe label{
   display:block;
-  position:absolute;
-  width:1px;
-  height:1px;
-  overflow:hidden;
-  opacity:0.01;
+  box-sizing:border-box;
+  width: 100%;
+  padding: 1em;
+  margin: 1em 0;
+  cursor:pointer;
+
+  border-radius: 5px;
+  border-bottom: 1px solid #bbb;
+  border-right: 1px solid #bbb;
+
+  background-color: #f7f7f7;
+}
+
+#recipes-list {
+  overflow: auto;
 }
 
 .profile_view {

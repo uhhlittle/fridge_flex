@@ -8,11 +8,23 @@ var RecipeView = function(recipe){
   this.title = document.createElement("label");
   this.title.innerHTML = recipe.title;
   this.title.htmlFor = "recipe"
+
+
+  // this.sourceUrl = document.createElement("a")
+  // this.sourceUrl.className = "sourceUrl"
+  // this.sourceUrl.innerHTML = recipe.sourceUrl;
+
   this.container.appendChild(this.title);
+  // this.container.appendChild(this.sourceUrl);
 
+  this.title.addEventListener("click", this.redirectToSource.bind(this))
 
-
-  // this.container.appendChild(text);
-  // this.container.appendChild(input); ----edit append needs work
   return this.container
 }
+
+RecipeView.prototype = {
+  redirectToSource: function(event) {
+
+    console.log("go to imageURl")
+  }
+};
