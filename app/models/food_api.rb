@@ -3,12 +3,12 @@ class FoodApi
 
   def initialize(search_params)
     search_url_params = URI.escape(search_params)
-    @search_url = "https://community-food2fork.p.mashape.com/search?key=#{@api_key}&q=#{search_url_params}"
+    @search_url = "https://community-food2fork.p.mashape.com/search?key=#{api_key}&q=#{search_url_params}"
   end
 
   def perform
     search_results = Unirest.get(@search_url, headers: {
-      "X-Mashape-Key" => "YjpQ94av6rmshlVYGUYlXQEZkQEZp1ytKoqjsnDobroeiEJWut",
+      "X-Mashape-Key" => ENV["mashape_key"],
       "Accept" => "application/json"
        } ).body["recipes"]
     rids = extract_rids(search_results)
@@ -19,14 +19,12 @@ class FoodApi
   private
 
   def api_key
-    ENV["MASHAPE_F2F_KEY"]
+    api_key = ENV["mashape_f2f_key"]
   end
 
   def headers
-    {
-      "X-Mashape-Key" => ENV['MASHAPE_KEY'],
-         "Accept" => "application/json"
-    }
+     mashape_key = ENV["mashape_key"]
+
   end
 
   def extract_rids(recipes)
@@ -38,11 +36,11 @@ class FoodApi
   end
 
   def get_recipes(search)
-    recipes= []#iterates through each item and sends get request to api for ingredients
+    recipes = []#iterates through each item and sends get request to api for ingredients
     search.each do |item|
-      results = Unirest.get "https://community-food2fork.p.mashape.com/get?key=@api_key=#{item}",
+      results = Unirest.get "https://community-food2fork.p.mashape.com/get?key=d3941dc6b97d453cf43b226ba487355f=#{item}",
       headers:{
-        "X-Mashape-Key" => ENV['MASHAPE_KEY'],
+        "X-Mashape-Key" => ENV["mashape_key"],
         "Accept" => "application/json"
       }
       recipes << {title: results.body["recipe"]["title"], ingredients: results.body["recipe"]["ingredients"], image_url: results.body["recipe"]["image_url"], source_url: results.body["recipe"]["source_url"]}

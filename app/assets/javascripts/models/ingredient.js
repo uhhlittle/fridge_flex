@@ -1,14 +1,15 @@
-var Ingredient = function(id, name, oz){
+var Ingredient = function(id, name, oz, fridgeId){
   this.id = id;
   this.name = name;
   this.oz = oz;
+  this.fridgeId = fridgeId;
 }
 
 Ingredient.prototype = {
   save: function(){
     $.ajax({
       type: 'POST',
-      data: { ingredient: {id: this.id, name: this.name, oz: this.oz}},
+      data: { ingredient: {id: this.id, name: this.name, oz: this.oz, fridge_id: this.fridgeId}},
       dataType: 'json',
       url: "/ingredients"
     }).done(function(response){
