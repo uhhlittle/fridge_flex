@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'figaro', '~> 1.1.1'
 
 gem "pry"
 

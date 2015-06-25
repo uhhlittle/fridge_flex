@@ -31,9 +31,8 @@ FridgeView.prototype = {
     }).done(function(response) {
         console.log("got search response");
       // fridgeView = new FridgeView(this);
-      // this.recipeList.innerHTML = "";
+    
       fridgeView.loadRecipes(response);
-
       fridgeView.render();
       fridgeView.renderRecipes();
 
@@ -49,7 +48,7 @@ FridgeView.prototype = {
       var recipe = new Recipe(response[i].title, response[i].ingredients, response[i].image_url);
       this.recipes.push(recipe);
     }
-    console.log(this.recipes);
+      console.log(this.recipes);
 
   },
 
