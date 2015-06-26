@@ -38,7 +38,7 @@ class FoodApi
   def get_recipes(search)
     recipes = []#iterates through each item and sends get request to api for ingredients
     search.each do |item|
-      results = Unirest.get "https://community-food2fork.p.mashape.com/get?key=d3941dc6b97d453cf43b226ba487355f=#{item}",
+      results = Unirest.get "https://community-food2fork.p.mashape.com/get?key=#{api_key}&rId=#{item}",
       headers:{
         "X-Mashape-Key" => ENV["mashape_key"],
         "Accept" => "application/json"

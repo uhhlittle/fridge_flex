@@ -2,6 +2,7 @@
   <h2 class="column-heading">What's in the fridge?</h2>
   <input id="new-ingredient-name" type="text" placeholder="Food Name"/>
   <input id="new-ingredient-oz" type="text" placeholder="Enter Oz"/>
+  <input id="fridge-id" type="hidden" value= "<%=@fridge.id%>"/>
   <button id="new-ingredient-button">Add Ingredient</button>
 </div>
 
@@ -30,7 +31,6 @@
       fridgeModel = new Fridge();
       console.log("this is a fridge")
       fridgeView = new FridgeView(fridgeModel);
-
 
   });
 </script>

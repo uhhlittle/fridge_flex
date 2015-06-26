@@ -72,7 +72,7 @@
 
 body {
   font-family: 'Helvetica';
-  background: #2eacb3;
+  background: #fcfcfc;
   color: rgba(255, 255, 255, 0.5);
 }
 h1, h2, p{
@@ -215,23 +215,31 @@ p {
 
 .profile_view {
 
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
+  /*margin-left: auto;
+  margin-right: auto;*/
+  /*width: 60%;*/
   height: 300px;
 
   padding: 24px;
 
   border-radius: 10px;
+  display: inline-block;
 
-  background-color: #ddd;
+  /*background-color: #ddd;*/
   color: #444;
+}
+
+.profile_view img {
+  float: right;
+  position: static;
+  overflow: hidden;
+
 }
 
 #view_buttons {
   display: inline-block;
-  width: 30%;
-  margin: 0 0 0 24px;
+  width: 20%;
+  margin: 0 0 0 50px;
   padding: 12px 24px;
   float:right
 
@@ -245,6 +253,27 @@ p {
   background-color: #ff6b6b;
 }
 
+
+
+.landing-left {
+  display: inline;
+  float: left;
+  width: 500px;
+}
+
+.landing-right {
+  /*width: 200px;*/
+  /*text-align: left;*/
+  display: inline-block;
+  width: 40%;
+  background-color: #DCEDED;
+  opacity: 50%;
+}
+.landing-right p {
+  display: block;
+  padding: 0;
+
+}
 .button-display {
   margin-left: auto;
   margin-right: auto;

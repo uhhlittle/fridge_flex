@@ -3,6 +3,7 @@ var FridgeView = function(fridgeModel){
   var lookForRecipesButton = document.querySelector("#look-for-recipes");
   this.newIngredientName = document.querySelector("#new-ingredient-name");
   this.newIngredientOz = document.querySelector("#new-ingredient-oz");
+  this.fridgeId = document.querySelector("#fridge-id")
   this.currentIngredientList = document.querySelector("#current-ingredient-column ul.ingredient-list");
   this.recipeList = document.querySelector("#recipes-column ul.recipe-list");
   this.model = fridgeModel;
@@ -17,7 +18,8 @@ FridgeView.prototype = {
     var id = this.id;
     var name = this.newIngredientName.value;
     var oz = this.newIngredientOz.value;
-    var ingredient = new Ingredient(id, name, oz);
+    var fridgeId = this.fridgeId.value;
+    var ingredient = new Ingredient(id, name, oz, fridgeId);
     ingredient.save();
     this.render()
   },
@@ -31,7 +33,7 @@ FridgeView.prototype = {
     }).done(function(response) {
         console.log("got search response");
       // fridgeView = new FridgeView(this);
-    
+
       fridgeView.loadRecipes(response);
       fridgeView.render();
       fridgeView.renderRecipes();

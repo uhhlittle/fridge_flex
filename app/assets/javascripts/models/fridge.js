@@ -46,7 +46,7 @@ Fridge.prototype = {
   loadIngredients: function(response) {
     this.ingredients = [];
     for(var i = 0; i < response.length; i++){
-      var ingredient = new Ingredient(response[i].id, response[i].name, response[i].oz);
+      var ingredient = new Ingredient(response[i].id, response[i].name, response[i].oz, response[i].fridge_id);
       this.ingredients.push(ingredient);
     }
   }
