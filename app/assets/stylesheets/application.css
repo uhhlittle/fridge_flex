@@ -259,6 +259,8 @@ p {
   display: inline;
   float: left;
   width: 500px;
+  height: 800px;
+  background-image: url("assets/openfridge.jpg");
 }
 
 .landing-right {
