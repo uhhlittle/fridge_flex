@@ -10,16 +10,6 @@
 </head>
 <body>
   <header>
-    <ul class= "right">
-      <% if current_user && current_user.profile %>
-      <li>  <%= link_to 'Signout', destroy_user_session_path, :method => :delete, class: "sign_out" %> </li>
-        <li><em><%= link_to "Welcome #{current_user.email}", profile_path(current_user.profile)%></em></li>
-      <% elsif current_user %>
-          <li><em><%= link_to "Welcome #{current_user.email}", '/profile'%></em></li>
-          <li>  <%= link_to 'Signout', destroy_user_session_path, :method => :delete, class: "sign_out" %> </li>
-      
-      <% end %>
-    </ul>
     <ul class="left">
       <div id="logo">
         <h1>fridge.flex</h1>
@@ -29,6 +19,17 @@
         <li><%= link_to 'Fridge', fridge_path(current_user.profile.fridge) %> </li>
       <% end %>
     </ul>
+    <ul class= "right">
+      <% if current_user && current_user.profile %>
+      <li>  <%= link_to 'Signout', destroy_user_session_path, :method => :delete, class: "sign_out" %> </li>
+        <li><em><%= link_to "Welcome #{current_user.email}", profile_path(current_user.profile)%></em></li>
+      <% elsif current_user %>
+          <li><em><%= link_to "Welcome #{current_user.email}", '/profile'%></em></li>
+          <li>  <%= link_to 'Signout', destroy_user_session_path, :method => :delete, class: "sign_out" %> </li>
+
+      <% end %>
+    </ul>
+
   </header>
 
 <%= yield %>
